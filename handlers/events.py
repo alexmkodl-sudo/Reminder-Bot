@@ -1,17 +1,3 @@
-"""
-handlers/events.py — все обработчики, связанные с событиями.
-
-Новое в v3:
-  ✅ /search <запрос>      — поиск по названию
-  ✅ /stats                — статистика пользователя
-  ✅ /export               — скачать .ics файл
-  ✅ /timezone             — сменить часовой пояс
-  ✅ /add с флагом повтора — кнопки выбора recurrence
-  ✅ Редактирование        — callback edit_ → пошаговый FSM
-  ✅ Подтверждение         — только для голосовых сообщений
-  ✅ Кнопки done_/snooze_  — уже в reminder.py, здесь done_ дублируем для /events
-"""
-
 import io
 import pytz
 from datetime import datetime, timezone, timedelta
