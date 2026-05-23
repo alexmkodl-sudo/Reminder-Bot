@@ -2,7 +2,7 @@ import telebot
 
 from config import BOT_TOKEN
 from utils.logger import logger
-from utils.reminder import start_reminder_loop, register_reminder_callbacks
+from utils.reminder import start_reminder_loop
 from db import init_db
 from handlers import register_start_handlers, register_event_handlers
 
@@ -15,11 +15,10 @@ def main():
 
     register_start_handlers(bot)
     register_event_handlers(bot)
-    register_reminder_callbacks(bot)   # snooze + done из напоминаний
 
     start_reminder_loop(bot, interval_seconds=60)
 
-    logger.info("Бот запущен (v3)")
+    logger.info("Бот запущен")
     bot.infinity_polling()
 
 
